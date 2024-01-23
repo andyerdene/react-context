@@ -1,5 +1,15 @@
 import React from "react";
+import { useTheme } from "@/context/ThemeContext";
 
 export function Left() {
-  return <div className="w-1/4 bg-slate-500">Left</div>;
+  const { theme } = useTheme();
+  const divClassName =
+    theme == "light" ? "w-1/4 bg-slate-700" : "w-1/4 bg-slate-100";
+  const pClassName = theme == "light" ? "text-white" : "text-black";
+
+  return (
+    <div className={divClassName}>
+      <p className={pClassName}>Left</p>
+    </div>
+  );
 }

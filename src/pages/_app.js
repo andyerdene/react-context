@@ -1,10 +1,13 @@
 import "@/styles/globals.css";
 import { QuestionProvider } from "@/context/QuestionContext";
+import ThemeProvider from "@/context/ThemeContext";
 
 export default function App({ Component, pageProps }) {
   return (
-    <QuestionProvider>
-      <Component {...pageProps} />
-    </QuestionProvider>
+    <ThemeProvider>
+      <QuestionProvider>
+        <Component {...pageProps} />
+      </QuestionProvider>
+    </ThemeProvider>
   );
 }
